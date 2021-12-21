@@ -1,19 +1,36 @@
-@import "assets/scripts/generic";
+@import "./assets/scripts/generic";
+@import "./assets/scripts/responsive";
 
-// - Mobile: 375px
-// - Desktop: 1440px
+// tablet => min-width : 576px
+// desktop => min-width : 992px
 
 body {
   background: var(--veryDarkBlue);
   height: 100vh;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .container {
-  padding: 5rem 2rem;
+  width: 100%;
+  padding: 5rem 2rem 2rem 2rem;
+  max-width: 125rem;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section {
+  width: 100%;
 }
 .profile {
   position: relative;
   height: 22rem;
+  @include desktop {
+    width: 24%;
+  }
   div {
     border-radius: 1.2rem;
     height: 15rem;
@@ -27,12 +44,22 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    @include desktop {
+      height: 28rem;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 3rem 0 0 3rem;
+    }
     .profileContainer {
       width: 8rem;
       height: 8rem;
       border: white solid 0.3rem;
       border-radius: 50%;
       margin-right: 2rem;
+      @include desktop {
+        margin-bottom: 3rem;
+      }
       img {
         width: 100%;
       }
@@ -45,6 +72,10 @@ body {
       span {
         font-weight: 400;
         font-size: 2.2rem;
+        @include desktop {
+          font-size: 4rem;
+          line-height: 120%;
+        }
       }
     }
   }
@@ -57,12 +88,30 @@ body {
     text-align: center;
     font-size: 1.5rem;
     font-weight: 300;
+    @include desktop {
+      top: 26rem;
+      padding-top: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     ul {
       width: 100%;
       display: inline-flex;
       flex-wrap: nowrap;
       flex-direction: row;
       justify-content: space-around;
+      @include desktop {
+        display: block;
+        text-align: left;
+        padding-left: 2rem;
+        padding-top: 1.5rem;
+      }
+      li {
+        @include desktop {
+          padding: 0.8rem 0;
+        }
+      }
       a {
         color: var(--paleBlue);
         &:hover {
@@ -73,14 +122,33 @@ body {
     }
   }
 }
+.sub-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  @include desktop {
+    width: 74.5%;
+  }
+}
 .card {
   position: relative;
   height: 19.5rem;
   margin-top: 2rem;
+  @include tablet {
+    width: 49%;
+  }
+  @include desktop {
+    width: 32%;
+  }
   div {
     border-radius: 1.2rem;
     height: 15rem;
     width: 100%;
+  }
+  div:first-of-type {
+    text-align: right;
+    padding-right: 1.5rem;
   }
   div:nth-of-type(2) {
     background-color: var(--darkBlue);
@@ -95,43 +163,40 @@ body {
   &-work {
     div:first-of-type {
       background-color: var(--orange);
-      text-align: right;
-      padding-right: 1.5rem;
+    }
+    @include desktop {
+      margin-top: 0;
     }
   }
   &-play {
     div:first-of-type {
       background-color: var(--softBlue);
-      text-align: right;
-      padding-right: 1.5rem;
+    }
+    @include desktop {
+      margin-top: 0;
     }
   }
   &-study {
     div:first-of-type {
       background-color: var(--lightRed);
-      text-align: right;
-      padding-right: 1.5rem;
+    }
+    @include desktop {
+      margin-top: 0;
     }
   }
   &-exercise {
     div:first-of-type {
       background-color: var(--limeGreen);
-      text-align: right;
-      padding-right: 1.5rem;
     }
   }
   &-social {
     div:first-of-type {
       background-color: var(--violet);
-      text-align: right;
-      padding-right: 1.5rem;
     }
   }
   &-selfcare {
     div:first-of-type {
       background-color: var(--yellow);
-      text-align: right;
-      padding-right: 1.5rem;
     }
   }
   &-content {
@@ -165,6 +230,22 @@ body {
     .lastWeek {
       font-size: 1.6rem;
       color: var(--desaturatedBlue);
+      padding-left: 1rem;
+    }
+  }
+}
+.attribution {
+  padding: 2rem;
+  max-width: 80rem;
+  margin: auto;
+  color: var(--desaturatedBlue);
+  font-size: 1rem;
+  text-align: center;
+  a {
+    color: white;
+    font-weight: 300;
+    &:hover {
+      font-weight: 400;
     }
   }
 }
