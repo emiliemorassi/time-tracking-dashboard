@@ -112,6 +112,16 @@ section {
           padding: 0.8rem 0;
         }
       }
+      button {
+        color: var(--paleBlue);
+        &:hover {
+          color: white;
+          font-weight: 400;
+        }
+        &:focus {
+          color: white;
+        }
+      }
       a {
         color: var(--paleBlue);
         &:hover {
