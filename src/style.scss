@@ -1,8 +1,5 @@
-@import "./assets/scripts/generic";
-@import "./assets/scripts/responsive";
-
-// tablet => min-width : 576px
-// desktop => min-width : 992px
+@import "./assets/scss/generic";
+@import "./assets/scss/responsive";
 
 body {
   background: var(--veryDarkBlue);
@@ -21,6 +18,9 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
+  @include desktop {
+    padding: 2rem;
+  }
 }
 section {
   width: 100%;
@@ -45,7 +45,7 @@ section {
     justify-content: center;
     align-items: center;
     @include desktop {
-      height: 28rem;
+      height: 33rem;
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
@@ -89,7 +89,8 @@ section {
     font-size: 1.5rem;
     font-weight: 300;
     @include desktop {
-      top: 26rem;
+      top: 31rem;
+      height: 19.5rem;
       padding-top: 0;
       display: flex;
       justify-content: center;
@@ -109,7 +110,7 @@ section {
       }
       li {
         @include desktop {
-          padding: 0.8rem 0;
+          padding: 1rem 0;
         }
       }
       button {
@@ -144,17 +145,28 @@ section {
 .card {
   position: relative;
   height: 19.5rem;
-  margin-top: 2rem;
+  margin-top: 3.5rem;
+  &:first-child {
+    margin-top: 3rem;
+    @include desktop {
+      margin-top: 0;
+    }
+  }
   @include tablet {
     width: 49%;
+    margin-top: 3rem;
   }
   @include desktop {
     width: 32%;
+    margin-top: 6.5rem;
   }
   div {
     border-radius: 1.2rem;
-    height: 15rem;
+    height: 16rem;
     width: 100%;
+    @include desktop {
+      height: 20rem;
+    }
   }
   div:first-of-type {
     text-align: right;
@@ -168,6 +180,7 @@ section {
     &:hover {
       background-color: var(--darkBlueHover);
       cursor: pointer;
+      transition: ease-in-out 0.5s;
     }
   }
   &-work {
@@ -218,10 +231,14 @@ section {
     h2,
     p {
       width: 50%;
+      padding-bottom: 2.5rem;
     }
     h2 {
       font-weight: 400;
       font-size: 2rem;
+      @include desktop {
+        padding-bottom: 2rem;
+      }
     }
     .more {
       text-align: right;
@@ -236,11 +253,18 @@ section {
     .hours {
       font-size: 4rem;
       font-weight: 300;
+      @include desktop {
+        width: 80%;
+      }
     }
     .lastWeek {
       font-size: 1.6rem;
       color: var(--desaturatedBlue);
       padding-left: 1rem;
+      @include desktop {
+        width: 100%;
+        padding-left: 0;
+      }
     }
   }
 }
@@ -251,6 +275,11 @@ section {
   color: var(--desaturatedBlue);
   font-size: 1rem;
   text-align: center;
+  margin-top: 1rem;
+  @include desktop {
+    margin-top: 5rem;
+    padding-bottom: 0rem;
+  }
   a {
     color: white;
     font-weight: 300;
