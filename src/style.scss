@@ -1,0 +1,170 @@
+@import "assets/scripts/generic";
+
+// - Mobile: 375px
+// - Desktop: 1440px
+
+body {
+  background: var(--veryDarkBlue);
+  height: 100vh;
+  margin: auto;
+}
+.container {
+  padding: 5rem 2rem;
+}
+.profile {
+  position: relative;
+  height: 22rem;
+  div {
+    border-radius: 1.2rem;
+    height: 15rem;
+    width: 100%;
+  }
+  div:first-of-type {
+    background-color: var(--blue);
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .profileContainer {
+      width: 8rem;
+      height: 8rem;
+      border: white solid 0.3rem;
+      border-radius: 50%;
+      margin-right: 2rem;
+      img {
+        width: 100%;
+      }
+    }
+    h1 {
+      color: white;
+      font-weight: 300;
+      font-size: 1.5rem;
+      line-height: 180%;
+      span {
+        font-weight: 400;
+        font-size: 2.2rem;
+      }
+    }
+  }
+  div:nth-of-type(2) {
+    background-color: var(--darkBlue);
+    position: absolute;
+    top: 7rem;
+    left: 0;
+    padding-top: 10.5rem;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 300;
+    ul {
+      width: 100%;
+      display: inline-flex;
+      flex-wrap: nowrap;
+      flex-direction: row;
+      justify-content: space-around;
+      a {
+        color: var(--paleBlue);
+        &:hover {
+          color: white;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+.card {
+  position: relative;
+  height: 19.5rem;
+  margin-top: 2rem;
+  div {
+    border-radius: 1.2rem;
+    height: 15rem;
+    width: 100%;
+  }
+  div:nth-of-type(2) {
+    background-color: var(--darkBlue);
+    position: absolute;
+    top: 4.5rem;
+    left: 0;
+    &:hover {
+      background-color: var(--darkBlueHover);
+      cursor: pointer;
+    }
+  }
+  &-work {
+    div:first-of-type {
+      background-color: var(--orange);
+      text-align: right;
+      padding-right: 1.5rem;
+    }
+  }
+  &-play {
+    div:first-of-type {
+      background-color: var(--softBlue);
+      text-align: right;
+      padding-right: 1.5rem;
+    }
+  }
+  &-study {
+    div:first-of-type {
+      background-color: var(--lightRed);
+      text-align: right;
+      padding-right: 1.5rem;
+    }
+  }
+  &-exercise {
+    div:first-of-type {
+      background-color: var(--limeGreen);
+      text-align: right;
+      padding-right: 1.5rem;
+    }
+  }
+  &-social {
+    div:first-of-type {
+      background-color: var(--violet);
+      text-align: right;
+      padding-right: 1.5rem;
+    }
+  }
+  &-selfcare {
+    div:first-of-type {
+      background-color: var(--yellow);
+      text-align: right;
+      padding-right: 1.5rem;
+    }
+  }
+  &-content {
+    padding: 3rem;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    h2,
+    p {
+      width: 50%;
+    }
+    h2 {
+      font-weight: 400;
+      font-size: 2rem;
+    }
+    .more {
+      text-align: right;
+      svg {
+        fill: var(--desaturatedBlue);
+        &:hover {
+          fill: white;
+          cursor: pointer;
+        }
+      }
+    }
+    .hours {
+      font-size: 4rem;
+      font-weight: 300;
+    }
+    .lastWeek {
+      font-size: 1.6rem;
+      color: var(--desaturatedBlue);
+    }
+  }
+}

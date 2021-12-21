@@ -1,0 +1,39 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-style: normal;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-size: 62.5%; /* 1rem = 10px (1.6rem = 16px) */
+
+  /* Shades of blue */
+  --veryDarkBlue: hsl(226, 43%, 10%);
+  --darkBlue: hsl(235, 46%, 20%);
+  --darkBlueHover: hsl(236, 45%, 26%);
+  --desaturatedBlue: hsl(235, 45%, 61%);
+  --paleBlue: hsl(236, 100%, 87%);
+
+  /* Cards */
+  --blue: hsl(246, 80%, 60%); //profile
+  --orange: hsl(15, 100%, 70%); //work
+  --softBlue: hsl(195, 74%, 62%); //play
+  --lightRed: hsl(348, 100%, 68%); //study
+  --limeGreen: hsl(145, 58%, 55%); //exercise
+  --violet: hsl(264, 64%, 52%); //social
+  --yellow: hsl(43, 84%, 65%); //self care
+}
+body {
+  font-family: "Rubik", sans-serif;
+  font-size: 1.2rem;
+  // font-size: 1.8rem; // card titles (worl, play, ...)
+  font-weight: 400;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
